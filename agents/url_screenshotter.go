@@ -127,7 +127,7 @@ func (a *URLScreenshotter) screenshotPage(page *core.Page) {
 	filePath := fmt.Sprintf("screenshots/%s.png", page.BaseFilename())
 	var chromeArguments = []string{
 		"--headless", "--disable-gpu", "--hide-scrollbars", "--mute-audio", "--disable-notifications",
-		"--no-first-run", "--disable-crash-reporter", "--ignore-certificate-errors", "--incognito",
+		"--no-first-run", "--disable-crash-reporter", "--ignore-certificate-errors", "--incognito", "--disable-features=VizDisplayCompositor",
 		"--disable-infobars", "--disable-sync", "--no-default-browser-check",
 		"--user-data-dir=" + a.tempUserDirPath,
 		"--user-agent=" + RandomUserAgent(),
